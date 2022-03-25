@@ -10,30 +10,53 @@ import UIKit
 class SearchVC: UITableViewController {
 	
 	@IBOutlet weak var searchBar: UISearchBar!
+	
+	let vm = SearchVM()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.title = "TMDB"
 		self.navigationItem.titleView = searchBar
-
     }
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "DetailSegue" {
+			let dvc = segue.destination as! MovieVC
+			if let object = sender as? Movie {
+				dvc.vm.movie = object
+			}
+		}
+	}
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+		return vm.movies.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+		return TableCellController.movieCell(for: tableView, datasource: vm.movies, index: indexPath)
     }
-    */
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		let movie = vm.movies[indexPath.row]
+		self.performSegue(withIdentifier: "DetailSegue", sender: movie)
+	}
+    
+	//MARK: - Search functionality
+	
+	func search(_ searchTerm: String) {
+		self.tableView.refreshControl?.beginRefreshing()
+		
+		vm.getSearchData(searchTerm: searchTerm) { completed in
+			self.tableView.refreshControl?.endRefreshing()
+			if completed {
+				self.tableView.reloadData()
+			}
+		}
+	}
 }
 
 extension SearchVC: UISearchBarDelegate {
@@ -61,7 +84,8 @@ extension SearchVC: UISearchBarDelegate {
 		}
 		
 		if !searchTerm.isEmpty {
-			debugPrint("Perform search too")
+			debugPrint("Perform search")
+			self.search(searchTerm)
 		}
 	}
 }

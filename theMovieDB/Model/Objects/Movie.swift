@@ -17,7 +17,7 @@ struct Movie: Codable {
 	var original_language: String
 	var original_title: String
 	
-	var poster_path: String
+	var poster_path: String?
 	var backdrop_path: String
 	
 	var genre_ids: Array<Int>

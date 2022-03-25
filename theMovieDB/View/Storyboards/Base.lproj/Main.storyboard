@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="DAj-GP-GB4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="movieCell" id="DAj-GP-GB4" customClass="movieCell" customModule="theMovieDB" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DAj-GP-GB4" id="axs-uA-E6a">
@@ -65,6 +65,12 @@
                                         <constraint firstItem="2kM-PI-9ZW" firstAttribute="leading" secondItem="axs-uA-E6a" secondAttribute="leading" constant="10" id="LAh-Vf-jHU"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="movieDetail" destination="jE5-yH-shQ" id="dWA-O9-0bP"/>
+                                    <outlet property="movieImage" destination="2kM-PI-9ZW" id="qM8-To-1ZS"/>
+                                    <outlet property="movieTitle" destination="Ibw-cs-0nn" id="uUd-RC-udk"/>
+                                    <outlet property="movieYear" destination="6Bn-HX-d9d" id="F8W-Bb-lwa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -73,6 +79,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TMDB" id="S3w-SX-nP0"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="YD7-T7-rQr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <outlet property="searchBar" destination="Jac-Oo-krD" id="hWy-NZ-Fvw"/>
                         <segue destination="AK9-bG-M6C" kind="show" id="5eW-p4-jeK"/>
