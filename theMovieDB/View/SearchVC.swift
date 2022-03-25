@@ -75,6 +75,12 @@ class SearchVC: UITableViewController {
 
 extension SearchVC: UISearchBarDelegate {
 	
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		if searchText.isEmpty {
+			vm.clearData()
+		}
+	}
+	
 	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
 		searchBar.setShowsCancelButton(true, animated: true)
 	}

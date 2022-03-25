@@ -12,6 +12,11 @@ class SearchVM: NSObject {
 	var movies: MoviesDataType = []
 	var pageIndex = 1
 	
+	func clearData() {
+		self.movies.removeAll()
+		DataStore.shared.data.removeAll()
+	}
+	
 	func getSearchData(searchTerm: String, completion: @escaping ((Bool) -> Void)) {
 		DataManager().getData(searchTerm: searchTerm, page: pageIndex) { completed in
 			self.movies = DataStore.shared.data

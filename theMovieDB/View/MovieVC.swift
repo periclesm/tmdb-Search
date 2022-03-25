@@ -13,6 +13,7 @@ class MovieVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.title = vm.movie?.title
 
     }
 
