@@ -21,7 +21,7 @@ class DataAPI: NSObject {
 	}
 	
 	func createImageEndpoint(imagePath: String) -> URL? {
-		let endpoint = String(format: "https://www.themoviedb.org/t/p/w1280/", imagePath)
+		let endpoint = String(format: "https://www.themoviedb.org/t/p/w1280/%@", imagePath)
 		let encodedEndpoint = self.encodeURL(endpoint)
 		let endpointURL = URL(string: encodedEndpoint)
 		

@@ -13,9 +13,9 @@ class TableCellController: NSObject {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: index) as! movieCell
 		let movie = datasource[index.row] as! Movie
 		
-		cell.movieTitle.text = "Terminator"
-		cell.movieYear.text = "1992"
-		cell.movieDetail.text = "Lorem Ipsum"
+		cell.movieTitle.text = movie.title
+		cell.movieYear.text = movie.release_date
+		cell.movieDetail.text = movie.overview
 		
 		if let imagePath = movie.poster_path {
 			DataManager().getImage(imagePath: imagePath) { image in

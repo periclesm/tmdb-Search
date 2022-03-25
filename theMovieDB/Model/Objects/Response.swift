@@ -9,7 +9,7 @@ import Foundation
 
 struct Response: Codable {
 	
-	var page : Int
+	var page: Int
 	var total_pages: Int
 	var total_results: Int
 	

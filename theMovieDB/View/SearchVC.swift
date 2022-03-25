@@ -47,6 +47,20 @@ class SearchVC: UITableViewController {
     
 	//MARK: - Search functionality
 	
+	@IBAction func refreshSearch() {
+		if let searchTerm = searchBar.text {
+			vm.getSearchData(searchTerm: searchTerm) { completed in
+				self.tableView.refreshControl?.endRefreshing()
+				if completed {
+					self.tableView.reloadData()
+				}
+			}
+		}
+		else {
+			self.tableView.refreshControl?.endRefreshing()
+		}
+	}
+	
 	func search(_ searchTerm: String) {
 		self.tableView.refreshControl?.beginRefreshing()
 		
