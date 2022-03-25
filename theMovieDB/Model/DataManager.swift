@@ -45,13 +45,23 @@ class DataManager: NSObject {
 		}
 	}
 	
-	private func parseData<T: Decodable>(data: Data) -> T {
-		do {
-			let decoder = JSONDecoder()
-			return try decoder.decode(T.self, from: data)
-		} catch {
-			debugPrint("Parsing error: \(error.localizedDescription)")
-			fatalError("error in decoding")
+	func getGenres(completion: ((Bool) -> Void)? = nil) {
+		let api = DataAPI()
+		
+		if let genreURL = api.createGenreEndpoint() {
+			Network().getData(endpoint: genreURL) { data, error in
+				if let responseData = data {
+					let genreResponse: GenreResponse = self.parseData(data: responseData)
+					DataStore.shared.genre = genreResponse.genres
+					completion?(true)
+				}
+				else {
+					completion?(false)
+				}
+			}
+		}
+		else {
+			completion?(false)
 		}
 	}
 	
@@ -85,6 +95,16 @@ class DataManager: NSObject {
 		else {
 			//send <endpoint_failure> error
 			completion(nil)
+		}
+	}
+	
+	private func parseData<T: Decodable>(data: Data) -> T {
+		do {
+			let decoder = JSONDecoder()
+			return try decoder.decode(T.self, from: data)
+		} catch {
+			debugPrint("Parsing error: \(error.localizedDescription)")
+			fatalError("error in decoding")
 		}
 	}
 }

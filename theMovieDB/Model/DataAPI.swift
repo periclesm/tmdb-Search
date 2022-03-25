@@ -20,6 +20,14 @@ class DataAPI: NSObject {
 		return endpointURL
 	}
 	
+	func createGenreEndpoint() -> URL? {
+		let endpoint = String(format: "https://api.themoviedb.org/3/genre/movie/list?api_key=%@&language=en-US", apiKey)
+		let encodedEndpoint = self.encodeURL(endpoint)
+		let endpointURL = URL(string: encodedEndpoint)
+		
+		return endpointURL
+	}
+	
 	func createImageEndpoint(imagePath: String) -> URL? {
 		let endpoint = String(format: "https://www.themoviedb.org/t/p/w500/%@", imagePath)
 		let encodedEndpoint = self.encodeURL(endpoint)

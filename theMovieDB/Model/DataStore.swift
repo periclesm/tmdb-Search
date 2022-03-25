@@ -8,8 +8,10 @@
 import UIKit
 
 typealias MoviesDataType = Array<Movie>
+typealias GenreDataType = Array<Genre>
 
 class DataStore: NSObject {
 	static var shared = DataStore()
 	var data: MoviesDataType = []
+	var genre: GenreDataType = []
 }

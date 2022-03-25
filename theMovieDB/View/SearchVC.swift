@@ -17,6 +17,8 @@ class SearchVC: UITableViewController {
         super.viewDidLoad()
 		self.title = "TMDB"
 		self.navigationItem.titleView = searchBar
+		
+		DataManager().getGenres()
     }
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
