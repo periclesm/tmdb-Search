@@ -14,7 +14,7 @@ class TableCellController: NSObject {
 		let movie = datasource[index.row] as! Movie
 		
 		cell.movieTitle.text = movie.title
-		cell.movieYear.text = movie.release_date
+		cell.movieYear.text = MDDate.shared.convertDateFormat(inputString: movie.release_date, fromFormat: .original, toFormat: .short)  
 		cell.movieDetail.text = movie.overview
 		
 		if let imagePath = movie.poster_path {
