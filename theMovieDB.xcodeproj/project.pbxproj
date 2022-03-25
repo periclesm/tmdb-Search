@@ -101,11 +101,11 @@
 			children = (
 				E88B203927EDBAC1009B6E1C /* AppDelegate.swift */,
 				E88B203B27EDBAC1009B6E1C /* SceneDelegate.swift */,
-				E88B203D27EDBAC1009B6E1C /* ViewController.swift */,
-				E88B203F27EDBAC1009B6E1C /* Main.storyboard */,
-				E88B204227EDBAC2009B6E1C /* Assets.xcassets */,
-				E88B204427EDBAC2009B6E1C /* LaunchScreen.storyboard */,
-				E88B204727EDBAC2009B6E1C /* Info.plist */,
+				E88B206E27EDBC03009B6E1C /* Supporting Files */,
+				E88B206927EDBB84009B6E1C /* Model */,
+				E88B206A27EDBB8E009B6E1C /* Domain */,
+				E88B206B27EDBB98009B6E1C /* View */,
+				E88B206C27EDBBC2009B6E1C /* System */,
 			);
 			path = theMovieDB;
 			sourceTree = "<group>";
@@ -125,6 +125,55 @@
 				E88B205C27EDBAC3009B6E1C /* theMovieDBUITestsLaunchTests.swift */,
 			);
 			path = theMovieDBUITests;
+			sourceTree = "<group>";
+		};
+		E88B206927EDBB84009B6E1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E88B206A27EDBB8E009B6E1C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E88B206B27EDBB98009B6E1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E88B206D27EDBBD4009B6E1C /* Storyboards */,
+				E88B203D27EDBAC1009B6E1C /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E88B206C27EDBBC2009B6E1C /* System */ = {
+			isa = PBXGroup;
+			children = (
+				E88B206F27EDBC89009B6E1C /* Network.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		E88B206D27EDBBD4009B6E1C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E88B204427EDBAC2009B6E1C /* LaunchScreen.storyboard */,
+				E88B203F27EDBAC1009B6E1C /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E88B206E27EDBC03009B6E1C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E88B204727EDBAC2009B6E1C /* Info.plist */,
+				E88B204227EDBAC2009B6E1C /* Assets.xcassets */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,16 +484,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AFNBPBD3C5;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = theMovieDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,9 +503,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.cloudfields.theMovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,16 +515,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AFNBPBD3C5;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = theMovieDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,9 +534,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.cloudfields.theMovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
