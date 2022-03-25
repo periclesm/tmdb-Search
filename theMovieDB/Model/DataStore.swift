@@ -10,7 +10,6 @@ import UIKit
 typealias MoviesDataType = Array<Movie>
 
 class DataStore: NSObject {
-	
 	static var shared = DataStore()
 	var data: MoviesDataType = []
 }
