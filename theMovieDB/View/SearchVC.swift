@@ -15,7 +15,7 @@ class SearchVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		self.title = "TMDB"
+		self.title = ""
 		self.navigationItem.titleView = searchBar
 		
 		DataManager().getGenres()

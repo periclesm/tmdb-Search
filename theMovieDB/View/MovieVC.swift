@@ -33,13 +33,17 @@ class MovieVC: UITableViewController {
 		
 		if let backPath = vm.movie?.backdrop_path {
 			DataManager().getImage(imagePath: backPath, type: .backdrop) { image in
-				self.backImage.image = image
+				UIView.transition(with: self.backImage, duration: 0.2, options: .transitionCrossDissolve) {
+					self.backImage.image = image
+				}
 			}
 		}
 		
 		if let imagePath = vm.movie?.poster_path {
 			DataManager().getImage(imagePath: imagePath) { image in
-				self.movieImage.image = image
+				UIView.transition(with: self.backImage, duration: 0.2, options: .transitionCrossDissolve) {
+					self.movieImage.image = image
+				}
 			}
 		}
 	}
