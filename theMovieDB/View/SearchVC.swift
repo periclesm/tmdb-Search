@@ -49,6 +49,11 @@ class SearchVC: UITableViewController {
     
 	//MARK: - Search functionality
 	
+	func clearSearch() {
+		vm.clearData()
+		self.tableView.reloadData()
+	}
+	
 	@IBAction func refreshSearch() {
 		if let searchTerm = searchBar.text {
 			vm.getSearchData(searchTerm: searchTerm) { completed in
@@ -79,7 +84,7 @@ extension SearchVC: UISearchBarDelegate {
 	
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		if searchText.isEmpty {
-			vm.clearData()
+			self.clearSearch()
 		}
 	}
 	
@@ -94,19 +99,17 @@ extension SearchVC: UISearchBarDelegate {
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
 		searchBar.text = ""
-		debugPrint("Cancel Button Click")
+		self.clearSearch()
 	}
 	
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
-		debugPrint("Search Button Click")
 		
 		guard let searchTerm = searchBar.text else {
 			return
 		}
 		
 		if !searchTerm.isEmpty {
-			debugPrint("Perform search")
 			self.search(searchTerm)
 		}
 	}

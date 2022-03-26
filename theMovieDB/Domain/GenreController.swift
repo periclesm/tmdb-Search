@@ -15,12 +15,19 @@ class GenreController: NSObject {
 		}
 		
 		var genreString = ""
+		var index = 1
 		
 		if let genreArray = inputMovie.genre_ids {
 			for id in genreArray {
 				for genre in DataStore.shared.genre {
 					if id == genre.id {
-						genreString.append(contentsOf: "\(genre.name), ")
+						genreString.append(contentsOf: "\(genre.name)")
+						
+						if index < genreArray.count {
+							genreString.append(contentsOf: ", ")
+							index+=1
+						}
+						
 						break
 					}
 				}
