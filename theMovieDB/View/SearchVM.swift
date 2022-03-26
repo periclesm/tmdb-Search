@@ -15,6 +15,7 @@ class SearchVM: NSObject {
 	func clearData() {
 		self.movies.removeAll()
 		DataStore.shared.data.removeAll()
+		pageIndex = 1
 	}
 	
 	func getSearchData(searchTerm: String, completion: @escaping ((Bool) -> Void)) {

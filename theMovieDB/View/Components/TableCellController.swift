@@ -16,15 +16,7 @@ class TableCellController: NSObject {
 		cell.movieTitle.text = movie.title
 		cell.movieYear.text = MDDate.shared.convertDateFormat(inputString: movie.release_date, fromFormat: .original, toFormat: .short)
 		cell.movieDetail.text = GenreController.getMovieGenres(movie)
-		cell.movieImage.image = UIImage(named: "TMDB_poster")
-		
-		if let imagePath = movie.poster_path {
-			DataManager().getImage(imagePath: imagePath) { image in
-				UIView.transition(with: cell.movieImage, duration: 0.2, options: .transitionCrossDissolve) {
-					cell.movieImage.image = image
-				}
-			}
-		}
+		cell.movieImage.getImage(url: movie.poster_path, placeholder: UIImage(named: "TMDB_poster"))
 		
 		return cell
 	}

@@ -30,6 +30,7 @@
 		E88B207727EDC91A009B6E1C /* DataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B207627EDC91A009B6E1C /* DataAPI.swift */; };
 		E88B207927EDC92A009B6E1C /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B207827EDC92A009B6E1C /* DataStore.swift */; };
 		E88B207B27EDC93B009B6E1C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88B207A27EDC93B009B6E1C /* DataManager.swift */; };
+		E8F6305B27EF7AAE00E4813D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F6305A27EF7AAE00E4813D /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		E88B207627EDC91A009B6E1C /* DataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAPI.swift; sourceTree = "<group>"; };
 		E88B207827EDC92A009B6E1C /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		E88B207A27EDC93B009B6E1C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		E8F6305A27EF7AAE00E4813D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			children = (
 				E88B206F27EDBC89009B6E1C /* Network.swift */,
 				E863546527EE3B3700303815 /* MDDate.swift */,
+				E8F6305A27EF7AAE00E4813D /* UIImageView+Extension.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				E863546427EE1F9300303815 /* TableCellController.swift in Sources */,
 				E88B203C27EDBAC1009B6E1C /* SceneDelegate.swift in Sources */,
 				E81DE58027EDE545000DB56A /* SearchVM.swift in Sources */,
+				E8F6305B27EF7AAE00E4813D /* UIImageView+Extension.swift in Sources */,
 				E863546227EE1E7800303815 /* TableCellClass.swift in Sources */,
 				E88B207727EDC91A009B6E1C /* DataAPI.swift in Sources */,
 				E88B207B27EDC93B009B6E1C /* DataManager.swift in Sources */,

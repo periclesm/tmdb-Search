@@ -30,21 +30,7 @@ class MovieVC: UITableViewController {
 		self.movieDescription.text = vm.movie?.overview
 		self.movieRating.text = "\(vm.movie?.vote_average ?? 0)"
 		self.movieVotes.text = "\(vm.movie?.vote_count ?? 0) votes"
-		
-		if let backPath = vm.movie?.backdrop_path {
-			DataManager().getImage(imagePath: backPath, type: .backdrop) { image in
-				UIView.transition(with: self.backImage, duration: 0.2, options: .transitionCrossDissolve) {
-					self.backImage.image = image
-				}
-			}
-		}
-		
-		if let imagePath = vm.movie?.poster_path {
-			DataManager().getImage(imagePath: imagePath) { image in
-				UIView.transition(with: self.backImage, duration: 0.2, options: .transitionCrossDissolve) {
-					self.movieImage.image = image
-				}
-			}
-		}
+		self.backImage.getImage(url: vm.movie?.backdrop_path)
+		self.movieImage.getImage(url: vm.movie?.poster_path)
 	}
 }
