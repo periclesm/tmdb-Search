@@ -65,7 +65,7 @@ class DataManager: NSObject {
 		}
 	}
 	
-	func getImage(imagePath: String?, completion: @escaping ((UIImage?) -> Void)) {
+	func getImage(imagePath: String?, type: ImageType? = .poster, completion: @escaping ((UIImage?) -> Void)) {
 		let api = DataAPI()
 		
 		guard let pathString = imagePath else {
@@ -74,7 +74,7 @@ class DataManager: NSObject {
 			return
 		}
 		
-		if let imageURL = api.createImageEndpoint(imagePath: pathString) {
+		if let imageURL = api.createImageEndpoint(imagePath: pathString, type: type) {
 			Network().getData(endpoint: imageURL) { data, error in
 				if error == nil {
 					if data != nil {

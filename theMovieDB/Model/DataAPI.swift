@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum ImageType {
+	case poster, backdrop
+}
+
 class DataAPI: NSObject {
 	
 	var apiKey = "2810b46c0fe82e2e7eb43466581d495f"
@@ -28,8 +32,17 @@ class DataAPI: NSObject {
 		return endpointURL
 	}
 	
-	func createImageEndpoint(imagePath: String) -> URL? {
-		let endpoint = String(format: "https://www.themoviedb.org/t/p/w500/%@", imagePath)
+	func createImageEndpoint(imagePath: String, type: ImageType? = .poster) -> URL? {
+		var endpoint = ""
+		
+		switch type {
+		case .backdrop:
+			endpoint = String(format: "https://www.themoviedb.org/t/p/w1280%@", imagePath)
+			
+		default:
+			endpoint = String(format: "https://www.themoviedb.org/t/p/w500%@", imagePath)
+		}
+		
 		let encodedEndpoint = self.encodeURL(endpoint)
 		let endpointURL = URL(string: encodedEndpoint)
 		

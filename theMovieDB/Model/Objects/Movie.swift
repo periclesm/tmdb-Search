@@ -14,9 +14,6 @@ struct Movie: Codable {
 	var overview: String?
 	var release_date: String?
 	
-	var original_language: String?
-	var original_title: String?
-	
 	var poster_path: String?
 	var backdrop_path: String?
 	
@@ -25,5 +22,5 @@ struct Movie: Codable {
 	var adult: Bool?
 	
 	var vote_average: Float?
-	var vote_count: Float? //wtf? why float? are there 5.3 or 5.7 people voted????
+	var vote_count: Int32?
 }

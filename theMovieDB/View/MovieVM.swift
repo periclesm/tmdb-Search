@@ -10,5 +10,4 @@ import UIKit
 class MovieVM: NSObject {
 	
 	var movie: Movie? = nil
-
 }
