@@ -13,9 +13,8 @@ struct ComicRelief {
 }
 
 protocol BackgroundDelegate {
-	func displayMessage(_ hidden:Bool)
-	func displayContent(_ hidden:Bool)
-	func displayAll(_ hidden:Bool)
+	func displayMessage(_ display:Bool)
+	func displayContent(_ display:Bool)
 }
 
 class BackVC: UIViewController {
@@ -70,16 +69,11 @@ class BackVC: UIViewController {
 }
 
 extension BackVC: BackgroundDelegate {
-	func displayMessage(_ hidden: Bool) {
-		self.message.isHidden = hidden
+	func displayMessage(_ display: Bool) {
+		self.message.isHidden = !display
 	}
 	
-	func displayContent(_ hidden: Bool) {
-		self.content.isHidden = hidden
-	}
-	
-	func displayAll(_ hidden: Bool) {
-		self.displayMessage(hidden)
-		self.displayContent(hidden)
+	func displayContent(_ display: Bool) {
+		self.content.isHidden = !display
 	}
 }

@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whoops! No results found!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ft8-dn-oH3">
-                                <rect key="frame" x="73.5" y="73.5" width="267.5" height="27.5"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
+                                <rect key="frame" x="30.5" y="64" width="353" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

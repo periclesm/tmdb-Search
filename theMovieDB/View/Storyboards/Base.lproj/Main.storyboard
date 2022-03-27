@@ -118,7 +118,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <connections>
-                        <segue destination="3T4-vf-hgc" kind="embed" id="cIy-1K-VcY"/>
+                        <segue destination="3T4-vf-hgc" kind="embed" identifier="BackSegue" id="cIy-1K-VcY"/>
                     </connections>
                 </containerView>
             </objects>
