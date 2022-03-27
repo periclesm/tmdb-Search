@@ -40,6 +40,16 @@ class SearchVC: UITableViewController {
 		return TableCellController.movieCell(for: tableView, datasource: vm.movies, index: indexPath)
     }
 	
+	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+		if (indexPath.row+1 == vm.movies.count) && (vm.movies.count < vm.totalCount) {
+			vm.pageIncrement()
+			vm.getSearchData(searchTerm: searchBar.text!) { completed in
+				self.tableView.reloadData()
+				debugPrint("[tvdb] Paginate: Page: \(self.vm.pageIndex) - Total Results: \(self.vm.totalCount) - Displaying: \(self.vm.movies.count)")
+			}
+		}
+	}
+	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		

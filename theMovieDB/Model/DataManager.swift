@@ -24,7 +24,12 @@ class DataManager: NSObject {
 					//parse data
 					if let responseData = data {
 						let response: Response = self.parseData(data: responseData)
-						DataStore.shared.data.append(contentsOf: response.results)
+						
+						let store = DataStore.shared
+						store.data.append(contentsOf: response.results)
+						store.totalResults = response.total_results
+						store.totalPages = response.total_pages
+						
 						completion(true)
 					}
 					else {
@@ -52,6 +57,7 @@ class DataManager: NSObject {
 			Network().getData(endpoint: genreURL) { data, error in
 				if let responseData = data {
 					let genreResponse: GenreResponse = self.parseData(data: responseData)
+
 					DataStore.shared.genre = genreResponse.genres
 					completion?(true)
 				}

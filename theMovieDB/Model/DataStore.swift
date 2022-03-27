@@ -12,6 +12,16 @@ typealias GenreDataType = Array<Genre>
 
 class DataStore: NSObject {
 	static var shared = DataStore()
+	
 	var data: MoviesDataType = []
 	var genre: GenreDataType = []
+	
+	var totalPages = 0
+	var totalResults = 0
+	
+	func clearData() {
+		self.data.removeAll()
+		totalPages = 0
+		totalResults = 0
+	}
 }
