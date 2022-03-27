@@ -9,14 +9,16 @@ import UIKit
 
 extension UIImageView {
 	
-	func getImage(url: String?, placeholder: UIImage? = nil) {
+	func getImage(url: String?, imageType: ImageType, placeholder: UIImage? = nil) {
 		if placeholder != nil {
 			self.image = placeholder
 		}
 		
 		if let urlString = url {
-			DataManager().getImage(imagePath: urlString, type: .backdrop) { image in
-				self.swapImage(new: image)
+			DataManager().getImage(imagePath: urlString, type: imageType) { image in
+				if image != nil {
+					self.swapImage(new: image)
+				}
 			}
 		}
 	}

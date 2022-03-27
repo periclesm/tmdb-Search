@@ -37,10 +37,10 @@ class DataAPI: NSObject {
 		
 		switch type {
 		case .backdrop:
-			endpoint = String(format: "https://www.themoviedb.org/t/p/w1280%@", imagePath)
+			endpoint = String(format: "https://www.themoviedb.org/t/p/w780%@", imagePath)
 			
 		default:
-			endpoint = String(format: "https://www.themoviedb.org/t/p/w500%@", imagePath)
+			endpoint = String(format: "https://www.themoviedb.org/t/p/w342%@", imagePath)
 		}
 		
 		let encodedEndpoint = self.encodeURL(endpoint)

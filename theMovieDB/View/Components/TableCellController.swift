@@ -16,7 +16,7 @@ class TableCellController: NSObject {
 		cell.movieTitle.text = movie.title
 		cell.movieYear.text = MDDate.shared.convertDateFormat(inputString: movie.release_date, fromFormat: .original, toFormat: .short)
 		cell.movieDetail.text = GenreController.getMovieGenres(movie)
-		cell.movieImage.getImage(url: movie.poster_path, placeholder: UIImage(named: "TMDB_poster"))
+		cell.movieImage.getImage(url: movie.poster_path, imageType: .poster, placeholder: UIImage(named: "TMDB_poster"))
 		
 		return cell
 	}

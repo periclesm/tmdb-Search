@@ -95,6 +95,7 @@ extension SearchVC: UISearchBarDelegate {
 	
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
+		self.clearSearch()
 		
 		guard let searchTerm = searchBar.text else {
 			return
