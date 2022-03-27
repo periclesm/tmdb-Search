@@ -10,6 +10,7 @@ import UIKit
 class SearchVC: UITableViewController {
 	
 	@IBOutlet weak var searchBar: UISearchBar!
+	@IBOutlet weak var backgroundView: UIView!
 	
 	let vm = SearchVM()
 
@@ -17,6 +18,7 @@ class SearchVC: UITableViewController {
         super.viewDidLoad()
 		self.title = ""
 		self.navigationItem.titleView = searchBar
+		self.tableView.backgroundView = backgroundView
 		
 		DataManager().getGenres()
     }
