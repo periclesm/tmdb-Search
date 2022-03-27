@@ -43,10 +43,7 @@ class SearchVC: UITableViewController {
 	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		if (indexPath.row+1 == vm.movies.count) && (vm.movies.count < vm.totalCount) {
 			vm.pageIncrement()
-			vm.getSearchData(searchTerm: searchBar.text!) { completed in
-				self.tableView.reloadData()
-				debugPrint("[tvdb] Paginate: Page: \(self.vm.pageIndex) - Total Results: \(self.vm.totalCount) - Displaying: \(self.vm.movies.count)")
-			}
+			self.search(searchBar.text!)
 		}
 	}
 	
@@ -64,16 +61,10 @@ class SearchVC: UITableViewController {
 		self.tableView.reloadData()
 	}
 	
-	@IBAction func refreshSearch() {
-		self.tableView.refreshControl?.endRefreshing()
-	}
-	
 	func search(_ searchTerm: String) {
-		self.tableView.refreshControl?.beginRefreshing()
-
 		vm.getSearchData(searchTerm: searchTerm) { completed in
-			self.tableView.refreshControl?.endRefreshing()
 			if completed {
+				debugPrint("[tvdb] Paginate: Page: \(self.vm.pageIndex) - Total Results: \(self.vm.totalCount) - Displaying: \(self.vm.movies.count)")
 				self.tableView.reloadData()
 			}
 		}
