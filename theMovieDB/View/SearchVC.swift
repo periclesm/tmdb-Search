@@ -13,6 +13,7 @@ class SearchVC: UITableViewController {
 	@IBOutlet weak var backgroundView: UIView!
 	
 	let vm = SearchVM()
+	var backDelegate: BackgroundDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class SearchVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		backDelegate?.displayAll(vm.movies.isEmpty)
 		return vm.movies.count
     }
 
