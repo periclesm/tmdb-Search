@@ -10,13 +10,16 @@ import UIKit
 class SearchVC: UITableViewController {
 	
 	@IBOutlet weak var searchBar: UISearchBar!
+	@IBOutlet weak var backgroundView: UIView!
 	
 	let vm = SearchVM()
+	var backDelegate: BackgroundDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.title = ""
 		self.navigationItem.titleView = searchBar
+		self.tableView.backgroundView = backgroundView
 		
 		DataManager().getGenres()
     }
@@ -28,11 +31,16 @@ class SearchVC: UITableViewController {
 				dvc.vm.movie = object
 			}
 		}
+		else if segue.identifier == "BackSegue" {
+			let dvc = segue.destination as! BackVC
+			self.backDelegate = dvc
+		}
 	}
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		backDelegate?.displayContent(vm.movies.isEmpty)
 		return vm.movies.count
     }
 
@@ -64,6 +72,7 @@ class SearchVC: UITableViewController {
 	func search(_ searchTerm: String) {
 		vm.getSearchData(searchTerm: searchTerm) { completed in
 			if completed {
+				self.backDelegate?.displayMessage(self.vm.movies.isEmpty)
 				debugPrint("[tvdb] Paginate: Page: \(self.vm.pageIndex) - Total Results: \(self.vm.totalCount) - Displaying: \(self.vm.movies.count)")
 				self.tableView.reloadData()
 			}
@@ -89,8 +98,6 @@ extension SearchVC: UISearchBarDelegate {
 	
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
-		searchBar.text = ""
-		self.clearSearch()
 	}
 	
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

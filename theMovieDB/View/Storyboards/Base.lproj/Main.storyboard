@@ -7,10 +7,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="a9T-J8-tKf">
+            <objects>
+                <navigationController id="MFf-ut-eYe" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8rU-hW-SjF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jqh-Zq-ZIg" kind="relationship" relationship="rootViewController" id="Jvo-z8-WBb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ScW-rh-WwG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-193" y="117"/>
+        </scene>
         <!--TMDB-->
         <scene sceneID="L7Z-B5-206">
             <objects>
-                <tableViewController id="jqh-Zq-ZIg" customClass="SearchVC" customModule="theMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jqh-Zq-ZIg" customClass="SearchVC" customModule="theMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="T2i-oY-eCi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,6 +80,7 @@
                                         <constraint firstItem="KNU-Lq-JoG" firstAttribute="centerY" secondItem="2kM-PI-9ZW" secondAttribute="centerY" id="zNv-RI-nXA"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <connections>
                                     <outlet property="movieDetail" destination="jE5-yH-shQ" id="dWA-O9-0bP"/>
                                     <outlet property="movieImage" destination="2kM-PI-9ZW" id="qM8-To-1ZS"/>
@@ -79,6 +96,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TMDB" id="S3w-SX-nP0"/>
                     <connections>
+                        <outlet property="backgroundView" destination="Qjw-MN-Kjg" id="frQ-ig-Ag0"/>
                         <outlet property="searchBar" destination="Jac-Oo-krD" id="hWy-NZ-Fvw"/>
                         <segue destination="AK9-bG-M6C" kind="show" identifier="DetailSegue" id="5eW-p4-jeK"/>
                     </connections>
@@ -96,13 +114,28 @@
                         <outlet property="delegate" destination="jqh-Zq-ZIg" id="HRk-Pe-dg9"/>
                     </connections>
                 </searchBar>
+                <containerView opaque="NO" contentMode="scaleToFill" id="Qjw-MN-Kjg">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <segue destination="3T4-vf-hgc" kind="embed" identifier="BackSegue" id="cIy-1K-VcY"/>
+                    </connections>
+                </containerView>
             </objects>
             <point key="canvasLocation" x="697" y="117"/>
+        </scene>
+        <!--BackVC-->
+        <scene sceneID="pAg-rl-iVx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ComicRelief" referencedIdentifier="BackVC" id="3T4-vf-hgc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bD2-8F-A3l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1211" y="-201"/>
         </scene>
         <!--MovieVC-->
         <scene sceneID="Fbr-dY-b3B">
             <objects>
-                <tableViewController id="AK9-bG-M6C" customClass="MovieVC" customModule="theMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MovieVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AK9-bG-M6C" customClass="MovieVC" customModule="theMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="9aB-Fa-5EX" userLabel="Table View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,6 +161,7 @@
                                                 <constraint firstItem="OA0-X6-lgc" firstAttribute="top" secondItem="9U9-dl-TUK" secondAttribute="top" id="nRD-K7-WqP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="n64-Nm-DXi" userLabel="Title Cell" customClass="GenericCell" customModule="theMovieDB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="274.5" width="414" height="84.5"/>
@@ -161,6 +195,7 @@
                                                 <constraint firstItem="hGa-L0-FHe" firstAttribute="leading" secondItem="Jhl-a4-HPh" secondAttribute="leading" constant="10" id="i2F-Lx-GCj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="q3w-V6-ZXq" userLabel="Info Cell" customClass="GenericCell" customModule="theMovieDB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="359" width="414" height="200"/>
@@ -212,6 +247,7 @@
                                                 <constraint firstItem="naC-8C-rzj" firstAttribute="top" secondItem="Qvk-LL-iqO" secondAttribute="top" constant="10" id="y07-BI-wk6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mKm-6W-REz" userLabel="Description Cell" customClass="GenericCell" customModule="theMovieDB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="559" width="414" height="52.5"/>
@@ -234,6 +270,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="Y50-vT-5QO" secondAttribute="trailing" constant="10" id="tck-jz-t8x"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -269,23 +306,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OO4-KW-nja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="117"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="a9T-J8-tKf">
-            <objects>
-                <navigationController id="MFf-ut-eYe" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8rU-hW-SjF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="jqh-Zq-ZIg" kind="relationship" relationship="rootViewController" id="Jvo-z8-WBb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ScW-rh-WwG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-193" y="117"/>
+            <point key="canvasLocation" x="1668" y="117"/>
         </scene>
     </scenes>
     <resources>
