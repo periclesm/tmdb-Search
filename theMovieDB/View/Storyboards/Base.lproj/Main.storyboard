@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MFf-ut-eYe">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,7 +12,7 @@
             <objects>
                 <navigationController id="MFf-ut-eYe" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8rU-hW-SjF">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -28,42 +28,42 @@
             <objects>
                 <tableViewController storyboardIdentifier="SearchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jqh-Zq-ZIg" customClass="SearchVC" customModule="theMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="T2i-oY-eCi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="movieCell" id="DAj-GP-GB4" customClass="MovieCell" customModule="theMovieDB" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="120.5"/>
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="120.33333587646484"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DAj-GP-GB4" id="axs-uA-E6a">
-                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="120.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="361.33333333333331" height="120.33333587646484"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TMDB_poster" translatesAutoresizingMaskIntoConstraints="NO" id="2kM-PI-9ZW">
-                                            <rect key="frame" x="10" y="10" width="67.5" height="100.5"/>
+                                            <rect key="frame" x="10" y="10" width="67.333333333333329" height="100.33333333333333"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="Frh-HC-doP"/>
                                                 <constraint firstAttribute="width" secondItem="2kM-PI-9ZW" secondAttribute="height" multiplier="67:100" id="kwr-mW-8Tt"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KNU-Lq-JoG">
-                                            <rect key="frame" x="87.5" y="30.5" width="280" height="60"/>
+                                            <rect key="frame" x="87.333333333333314" y="30.333333333333332" width="256" height="59.666666666666671"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibw-cs-0nn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="88.5" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="88.666666666666671" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bn-HX-d9d">
-                                                    <rect key="frame" x="0.0" y="24.5" width="26" height="14.5"/>
+                                                    <rect key="frame" x="0.0" y="24.333333333333332" width="25.666666666666668" height="14.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="genres" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jE5-yH-shQ">
-                                                    <rect key="frame" x="0.0" y="43" width="44.5" height="17"/>
+                                                    <rect key="frame" x="0.0" y="42.666666666666671" width="44.333333333333336" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -137,21 +137,21 @@
             <objects>
                 <tableViewController storyboardIdentifier="MovieVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AK9-bG-M6C" customClass="MovieVC" customModule="theMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="9aB-Fa-5EX" userLabel="Table View">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <sections>
                             <tableViewSection id="vp6-Di-Dbn">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="230" id="0Gx-z9-Eei" userLabel="Backdrop Cell" customClass="GenericCell" customModule="theMovieDB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="230"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Gx-z9-Eei" id="9U9-dl-TUK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="230"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TMDB_backdrop" translatesAutoresizingMaskIntoConstraints="NO" id="OA0-X6-lgc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="230"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -164,23 +164,23 @@
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="n64-Nm-DXi" userLabel="Title Cell" customClass="GenericCell" customModule="theMovieDB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="274.5" width="414" height="84.5"/>
+                                        <rect key="frame" x="0.0" y="274.66666603088379" width="390" height="84.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n64-Nm-DXi" id="Jhl-a4-HPh">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="84.333335876464844"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="hGa-L0-FHe">
-                                                    <rect key="frame" x="10" y="16" width="394" height="52.5"/>
+                                                    <rect key="frame" x="10" y="16.000000000000004" width="370" height="52.333333333333343"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3o-S8-4Y8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="32.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="32.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD8-sI-hey">
-                                                            <rect key="frame" x="0.0" y="34.5" width="394" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD8-sI-hey">
+                                                            <rect key="frame" x="0.0" y="34.333333333333336" width="370" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -198,35 +198,35 @@
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="q3w-V6-ZXq" userLabel="Info Cell" customClass="GenericCell" customModule="theMovieDB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="359" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="359.00000190734863" width="390" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q3w-V6-ZXq" id="Qvk-LL-iqO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TMDB_poster" translatesAutoresizingMaskIntoConstraints="NO" id="naC-8C-rzj">
-                                                    <rect key="frame" x="10" y="10" width="120.5" height="180"/>
+                                                    <rect key="frame" x="10.000000000000007" y="10" width="120.66666666666669" height="180"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="180" id="TFN-KB-TzK"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nfC-yM-L3Z">
-                                                    <rect key="frame" x="140.5" y="40.5" width="243.5" height="119"/>
+                                                    <rect key="frame" x="140.66666666666663" y="40.666666666666664" width="219.33333333333337" height="118.66666666666669"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRv-yF-WtG">
-                                                            <rect key="frame" x="101.5" y="0.0" width="41" height="43"/>
+                                                            <rect key="frame" x="89" y="0.0" width="41" height="43"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6.8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2K-c8-MRe">
-                                                            <rect key="frame" x="103" y="45" width="37.5" height="29"/>
+                                                            <rect key="frame" x="90.666666666666686" y="45.000000000000007" width="37.666666666666657" height="28.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15265" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="448-IJ-TRi">
-                                                            <rect key="frame" x="98" y="76" width="48" height="43"/>
+                                                            <rect key="frame" x="85.666666666666686" y="75.666666666666657" width="48" height="43"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -250,14 +250,14 @@
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mKm-6W-REz" userLabel="Description Cell" customClass="GenericCell" customModule="theMovieDB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="559" width="414" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="559.00000190734863" width="390" height="52.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mKm-6W-REz" id="J3a-1e-XnV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="52.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y50-vT-5QO">
-                                                    <rect key="frame" x="10" y="16" width="394" height="20.5"/>
+                                                    <rect key="frame" x="10" y="15.999999999999998" width="370" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -283,7 +283,7 @@
                     <navigationItem key="navigationItem" id="nvq-Lb-erG">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="AYM-ew-dBS">
-                            <rect key="frame" x="207" y="22" width="0.0" height="0.0"/>
+                            <rect key="frame" x="195" y="22" width="0.0" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TMDB_logo_short" id="W4h-bf-w1S">

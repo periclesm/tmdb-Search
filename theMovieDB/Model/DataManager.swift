@@ -13,7 +13,7 @@ class DataManager: NSObject {
 		let api = DataAPI()
 		
 		guard let searchString = searchTerm else {
-			//send <no_search_term> error
+			debugPrint("[tmdb-DataManager] send <no_search_term> error")
 			completion(false)
 			return
 		}
@@ -23,7 +23,7 @@ class DataManager: NSObject {
 				if error == nil {
 					//parse data
 					if let responseData = data {
-						let response: Response = self.parseData(data: responseData)
+						let response: Search = self.parseData(data: responseData)
 						
 						let store = DataStore.shared
 						store.data.append(contentsOf: response.results)
@@ -33,19 +33,19 @@ class DataManager: NSObject {
 						completion(true)
 					}
 					else {
-						//send <no_data> error
+						debugPrint("[tmdb-DataManager] send <no_data> error")
 						completion(false)
 					}
 					
 				}
 				else {
-					//send <error.localizedString> error
+					debugPrint("[tmdb-DataManager] send <\(error?.localizedDescription ?? "error.localizedDescription")> error")
 					completion(false)
 				}
 			}
 		}
 		else {
-			//send <endpoint_failure> error
+			debugPrint("[tmdb-DataManager] send <endpoint_failure> error")
 			completion(false)
 		}
 	}
@@ -62,11 +62,13 @@ class DataManager: NSObject {
 					completion?(true)
 				}
 				else {
+					debugPrint("[tmdb-DataManager] send <endpoint_failure> error")
 					completion?(false)
 				}
 			}
 		}
 		else {
+			debugPrint("[tmdb-DataManager] send <endpoint_failure> error")
 			completion?(false)
 		}
 	}
@@ -75,7 +77,7 @@ class DataManager: NSObject {
 		let api = DataAPI()
 		
 		guard let pathString = imagePath else {
-			//send <no_image_path> error
+			debugPrint("[tmdb-DataManager] send <no_image_path> error")
 			completion(nil)
 			return
 		}
@@ -88,23 +90,25 @@ class DataManager: NSObject {
 						completion(image)
 					}
 					else {
-						//send <no_image_data> error
+						debugPrint("[tmdb-DataManager] send <no_image_data> error")
 						completion(nil)
 					}
 				}
 				else {
-					//send <error.localizedString> error
+					debugPrint("[tmdb-DataManager] send <\(error?.localizedDescription ?? "error.localizedDescription")> error")
 					completion(nil)
 				}
 			}
 		}
 		else {
-			//send <endpoint_failure> error
+			debugPrint("[tmdb-DataManager] send <endpoint_failure> error")
 			completion(nil)
 		}
 	}
 	
-	private func parseData<T: Decodable>(data: Data) -> T {
+	//MARK: - Data Parsing
+	
+	func parseData<T: Decodable>(data: Data) -> T {
 		do {
 			let decoder = JSONDecoder()
 			return try decoder.decode(T.self, from: data)
