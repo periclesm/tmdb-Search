@@ -26,7 +26,7 @@ class MovieVC: UITableViewController {
 	
 	func setupUI() {
 		self.movieTitle.text = vm.movie?.title
-		self.movieSubtitle.text = "\(MDDate.shared.convertDateFormat(inputString: vm.movie?.release_date, fromFormat: .original, toFormat: .formatted)) • \(GenreController.getMovieGenres(vm.movie))"
+		self.movieSubtitle.text = vm.subtitleString()
 		self.movieDescription.text = vm.movie?.overview
 		self.movieRating.text = "\(vm.movie?.vote_average ?? 0)"
 		self.movieVotes.text = "\(vm.movie?.vote_count ?? 0) votes"

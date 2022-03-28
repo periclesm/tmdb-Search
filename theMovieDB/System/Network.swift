@@ -14,10 +14,6 @@ enum NetHTTPMethod: String {
 
 class Network: NSObject {
 
-	/**
-	 Creates the `URLRequest` and its parameters to be used in `URLSession`. The `URLRequest` parameters are based on `NetConfig` plus some standard properties.
-	 - Returns: A `URLRequest` for the `URLSession` in `getData()` function.
-	 */
 	private func createRequest(url: URL, method: NetHTTPMethod = .GET, caching: URLRequest.CachePolicy = .useProtocolCachePolicy) -> URLRequest {
 		var request = URLRequest(url: url)
 		request.timeoutInterval = 15
@@ -49,7 +45,7 @@ class Network: NSObject {
 extension Network: URLSessionDelegate {
 	
 	func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-		//debugPrint("finished task \(session)")
+		//debugPrint("finished task")
 	}
 	
 	func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {

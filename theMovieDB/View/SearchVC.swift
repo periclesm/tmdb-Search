@@ -48,6 +48,8 @@ class SearchVC: UITableViewController {
 		return TableCellController.movieCell(for: tableView, datasource: vm.movies, index: indexPath)
     }
 	
+	// MARK: - Table view delegate
+	
 	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		if (indexPath.row+1 == vm.movies.count) && (vm.movies.count < vm.totalCount) {
 			vm.pageIncrement()
@@ -62,7 +64,7 @@ class SearchVC: UITableViewController {
 		self.performSegue(withIdentifier: "DetailSegue", sender: movie)
 	}
     
-	//MARK: - Search functionality
+	//MARK: - Search methods
 	
 	func clearSearch() {
 		vm.clearData()

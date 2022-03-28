@@ -19,12 +19,12 @@ protocol BackgroundDelegate {
 
 class BackVC: UIViewController {
 	
-	@IBOutlet weak var message: UILabel!
-	@IBOutlet weak var content: UIStackView!
-	
 	enum buttonTags: Int {
 		case trailers = 1, showtimes, boxoffice, topMovies, comingSoon, winners
 	}
+	
+	@IBOutlet weak var message: UILabel!
+	@IBOutlet weak var content: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,6 @@ class BackVC: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		let dvc = segue.destination as! ContentVC
 		dvc.content = sender as? ComicRelief
-		
 	}
     
 	@IBAction func presentContentVC(_ sender: UIButton) {
