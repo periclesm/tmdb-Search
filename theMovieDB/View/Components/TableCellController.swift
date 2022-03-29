@@ -9,14 +9,14 @@ import UIKit
 
 class TableCellController: NSObject {
 	
-	class func movieCell(for tableView: UITableView, datasource: Array<Any>, index: IndexPath) -> MovieCell {
+	///Function to create the movie UITableViewCell and assign values to the respective UI components.
+	class func movieCell(for tableView: UITableView, dataObject: Movie, index: IndexPath) -> MovieCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: index) as! MovieCell
-		let movie = datasource[index.row] as! Movie
 		
-		cell.movieTitle.text = movie.title
-		cell.movieYear.text = MDDate.shared.convertDateFormat(inputString: movie.release_date, fromFormat: .original, toFormat: .short)
-		cell.movieDetail.text = GenreController.getMovieGenres(movie)
-		cell.movieImage.getImage(url: movie.poster_path, imageType: .poster, placeholder: UIImage(named: "TMDB_poster"))
+		cell.movieTitle.text = dataObject.title
+		cell.movieYear.text = MDDate.shared.convertDateFormat(inputString: dataObject.release_date, fromFormat: .original, toFormat: .short)
+		cell.movieDetail.text = GenreController.getMovieGenres(dataObject)
+		cell.movieImage.getImage(url: dataObject.poster_path, imageType: .poster, placeholder: UIImage(named: "TMDB_poster"))
 		
 		return cell
 	}

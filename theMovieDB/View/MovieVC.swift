@@ -7,6 +7,10 @@
 
 import UIKit
 
+/**
+ This is a straightforward VC, used only to display the movie information.
+ No further actions or user input is needed.
+ */
 class MovieVC: UITableViewController {
 	
 	let vm = MovieVM()
@@ -24,6 +28,7 @@ class MovieVC: UITableViewController {
 		setupUI()
     }
 	
+	//Assign the selected movie values into UI components.
 	func setupUI() {
 		self.movieTitle.text = vm.movie?.title
 		self.movieSubtitle.text = vm.subtitleString()

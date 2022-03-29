@@ -7,7 +7,7 @@
 
 import UIKit
 
-
+///Generic UITableViewCell with specific customization.
 class GenericCell: UITableViewCell {
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -15,6 +15,7 @@ class GenericCell: UITableViewCell {
 	}
 }
 
+///Movie UITableViewCell subclassed from GenericCell to inherit all custom properties plus its own.
 class MovieCell: GenericCell {
 	@IBOutlet weak var movieImage: UIImageView!
 	@IBOutlet weak var movieTitle: UILabel!
