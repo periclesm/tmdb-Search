@@ -15,8 +15,14 @@ class DataAPI: NSObject {
 	
 	var apiKey = "2810b46c0fe82e2e7eb43466581d495f"
 	
-	func createMovieEndoint(searchTerm: String, requestPage: Int = 1) -> URL? {
-		let endpoint = String(format: "https://api.themoviedb.org/3/search/movie?api_key=%@&language=en-US&query=%@&page=%@&include_adult=false", apiKey, searchTerm, String(requestPage))
+	/**
+	 Creates the search movie API endpoint.
+	 - Parameter searchTerm: String The search string the user typed.
+	 - Parameter page: Int The page of the search. Defaults to page 1 when the search is done for the first time.
+	 - Returns: `URL` The url to be used in Network module.
+	 */
+	func createSearchMovieEndoint(searchTerm: String, page: Int = 1) -> URL? {
+		let endpoint = String(format: "https://api.themoviedb.org/3/search/movie?api_key=%@&language=en-US&query=%@&page=%@&include_adult=false", apiKey, searchTerm, String(page))
 		
 		let encodedEndpoint = self.encodeURL(endpoint)
 		let endpointURL = URL(string: encodedEndpoint)
@@ -24,6 +30,10 @@ class DataAPI: NSObject {
 		return endpointURL
 	}
 	
+	/**
+	 Creates the genre API endpoint.
+	 - Returns: `URL` The url to be used in Network module.
+	 */
 	func createGenreEndpoint() -> URL? {
 		let endpoint = String(format: "https://api.themoviedb.org/3/genre/movie/list?api_key=%@&language=en-US", apiKey)
 		
@@ -33,6 +43,12 @@ class DataAPI: NSObject {
 		return endpointURL
 	}
 	
+	/**
+	 Creates the image API endpoint.
+	 - Parameter imagePath: String The path (/) and the filename of the requested image.
+	 - Parameter type: Int Specifies whether the image is a movie poster or a backdrop.
+	 - Returns: `URL` The url to be used in Network module.
+	 */
 	func createImageEndpoint(imagePath: String, type: ImageType? = .poster) -> URL? {
 		var endpoint = ""
 		
@@ -50,6 +66,7 @@ class DataAPI: NSObject {
 		return endpointURL
 	}
 	
+	/// URL encodes the endpoint string to avoid illegal characters.
 	private func encodeURL(_ urlString: String) -> String {
 		if !urlString.isEmpty {
 			if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {

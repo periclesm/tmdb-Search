@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Search: Codable {
+struct SearchResponse: Codable {
 	
 	var page: Int
 	var total_pages: Int

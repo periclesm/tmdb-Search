@@ -11,7 +11,7 @@ import XCTest
 class APITests: XCTestCase {
 	
 	var timeout = 15
-	var searchEndpointURL = DataAPI().createMovieEndoint(searchTerm: "aliens")
+	var searchEndpointURL = DataAPI().createSearchMovieEndoint(searchTerm: "aliens")
 	var genreEndpointURL = DataAPI().createGenreEndpoint()
 	var imageEndpointURL = DataAPI().createImageEndpoint(imagePath: "/8c4a8kE7PizaGQQnditMmI1xbRp.jpg")
 
@@ -42,7 +42,7 @@ class APITests: XCTestCase {
 		XCTAssertNotNil(responseData)
 		
 		//map data
-		let parsedData: Search = DataManager().parseData(data: responseData!)
+		let parsedData: SearchResponse = DataManager().parseData(data: responseData!)
 		XCTAssertNotNil(parsedData)
 	}
 	
