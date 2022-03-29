@@ -91,7 +91,7 @@ class SearchVC: UITableViewController {
 		vm.getSearchData(searchTerm: searchTerm) { completed in
 			if completed {
 				self.backDelegate?.displayMessage(self.vm.movies.isEmpty)
-				debugPrint("[tvdb] Paginate: Page: \(self.vm.pageIndex) - Total Results: \(self.vm.totalCount) - Displaying: \(self.vm.movies.count)")
+				debugPrint("[tvdb-SearchVC] Paginate: Page: \(self.vm.pageIndex) - Total Results: \(self.vm.totalCount) - Displaying: \(self.vm.movies.count)")
 				self.tableView.reloadData()
 			}
 		}

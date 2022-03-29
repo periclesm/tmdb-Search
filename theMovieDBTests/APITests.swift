@@ -23,6 +23,7 @@ class APITests: XCTestCase {
         
     }
 	
+	///Perform a test with a dummy search.
 	func testSearchAPI() throws {
 		XCTAssertNotNil(searchEndpointURL)
 		
@@ -46,6 +47,7 @@ class APITests: XCTestCase {
 		XCTAssertNotNil(parsedData)
 	}
 	
+	///Test the process of fetching all Genres.
 	func testGenresAPI() throws {
 		XCTAssertNotNil(genreEndpointURL)
 		
@@ -69,6 +71,7 @@ class APITests: XCTestCase {
 		XCTAssertNotNil(parsedData)
 	}
 	
+	///Test the download of a predefined image.
 	func testImageAPI() throws {
 		XCTAssertNotNil(imageEndpointURL)
 		
@@ -88,6 +91,7 @@ class APITests: XCTestCase {
 		XCTAssertNotNil(image)
 	}
 	
+	///Test what happens if the movie has no image.
 	func testBlankImageAPI() {
 		// Setting first a blank image
 		let blankImageEndpointURL = DataAPI().createImageEndpoint(imagePath: "")

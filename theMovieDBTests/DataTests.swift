@@ -21,6 +21,7 @@ class DataTests: XCTestCase {
         
     }
 	
+	///Test the pagination functionality and fetch all search results for a given search term.
 	func testDataPagination() throws {
 		let searchVM = SearchVM()
 		var storedDataCount = searchVM.movies.count

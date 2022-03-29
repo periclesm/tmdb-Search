@@ -45,22 +45,22 @@ class BackVC: UIViewController {
 		
 		switch tag {
 		case .trailers:
-			comic = ComicRelief.init(message: "You're gonna need a bigger app", image: "/s2xcqSFfT6F7ZXHxowjxfG0yisT.jpg")
+			comic = ComicRelief.init(message: "You're gonna need a bigger APP...", image: "/s2xcqSFfT6F7ZXHxowjxfG0yisT.jpg")
 			
 		case .showtimes:
-			comic = ComicRelief.init(message: "There's no place like search", image: "/bSA6DbAC5gdkaooU164lQUX6rVs.jpg")
+			comic = ComicRelief.init(message: "There's no place like SEARCH", image: "/bSA6DbAC5gdkaooU164lQUX6rVs.jpg")
 			
 		case .boxoffice:
-			comic = ComicRelief.init(message: "My precious...", image: "/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg")
+			comic = ComicRelief.init(message: "My precious... (SEARCH)", image: "/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg")
 			
 		case .topMovies:
-			comic = ComicRelief.init(message: "Search, my dear Watson", image: "/eFORQaQuldP89f8mQMaa71mmLqu.jpg")
+			comic = ComicRelief.init(message: "Elementary (SEARCH), my dear Watson", image: "/eFORQaQuldP89f8mQMaa71mmLqu.jpg")
 			
 		case .comingSoon:
-			comic = ComicRelief.init(message: "May the Search be with you", image: "/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg")
+			comic = ComicRelief.init(message: "May the SEARCH Force be with you", image: "/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg")
 			
 		case .winners:
-			comic = ComicRelief.init(message: "Search. James Search", image: "/w9ph5cUfGbw41WXt7yuXsWeN2TV.jpg")
+			comic = ComicRelief.init(message: "Search.\nJames Search", image: "/w9ph5cUfGbw41WXt7yuXsWeN2TV.jpg")
 		}
 		
 		return comic
