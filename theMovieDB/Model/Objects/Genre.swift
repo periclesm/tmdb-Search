@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Genre: Codable {
+struct Genre: Decodable {
 	var id: Int
 	var name: String
 }

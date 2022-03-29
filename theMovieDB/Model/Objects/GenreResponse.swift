@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct GenreResponse: Codable {
+struct GenreResponse: Decodable {
 	var genres: [Genre]
 }

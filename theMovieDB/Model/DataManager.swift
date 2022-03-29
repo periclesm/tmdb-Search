@@ -38,8 +38,8 @@ class DataManager: NSObject {
 						//Finally, store the necessary data in their objects.
 						let store = DataStore.shared
 						store.data.append(contentsOf: response.results)
-						store.totalResults = response.total_results
-						store.totalPages = response.total_pages
+						store.totalResults = response.totalResults
+						store.totalPages = response.totalPages
 						
 						completion(true)
 					}
@@ -143,7 +143,9 @@ class DataManager: NSObject {
 	
 	func parseData<T: Decodable>(data: Data) -> T {
 		do {
-			return try JSONDecoder().decode(T.self, from: data)
+			let decoder = JSONDecoder()
+			decoder.keyDecodingStrategy = .convertFromSnakeCase
+			return try decoder.decode(T.self, from: data)
 		} catch {
 			debugPrint("Parsing error: \(error.localizedDescription)")
 			fatalError("error in decoding")

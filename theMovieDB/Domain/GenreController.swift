@@ -26,7 +26,7 @@ class GenreController: NSObject {
 		var genreString = ""
 		var index = 1
 		
-		if let genreArray = inputMovie.genre_ids {
+		if let genreArray = inputMovie.genreIds {
 			for id in genreArray {
 				for genre in DataStore.shared.genre {
 					if id == genre.id {

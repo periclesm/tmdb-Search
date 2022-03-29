@@ -14,9 +14,9 @@ class TableCellController: NSObject {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: index) as! MovieCell
 		
 		cell.movieTitle.text = dataObject.title
-		cell.movieYear.text = MDDate.shared.convertDateFormat(inputString: dataObject.release_date, fromFormat: .original, toFormat: .short)
+		cell.movieYear.text = MDDate.shared.convertDateFormat(inputString: dataObject.releaseDate, fromFormat: .original, toFormat: .short)
 		cell.movieDetail.text = GenreController.getMovieGenres(dataObject)
-		cell.movieImage.getImage(url: dataObject.poster_path, imageType: .poster, placeholder: UIImage(named: "TMDB_poster"))
+		cell.movieImage.getImage(url: dataObject.posterPath, imageType: .poster, placeholder: UIImage(named: "TMDB_poster"))
 		
 		return cell
 	}

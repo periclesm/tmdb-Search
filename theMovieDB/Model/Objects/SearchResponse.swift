@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct SearchResponse: Codable {
+struct SearchResponse: Decodable {
 	
 	var page: Int
-	var total_pages: Int
-	var total_results: Int
+	var totalPages: Int
+	var totalResults: Int
 	
 	var results: [Movie]
 }
