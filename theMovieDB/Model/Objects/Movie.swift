@@ -22,5 +22,5 @@ struct Movie: Decodable {
 	var adult: Bool?
 	
 	var voteAverage: Float?
-	var voteCount: Int32?
+	var voteCount: Int?
 }

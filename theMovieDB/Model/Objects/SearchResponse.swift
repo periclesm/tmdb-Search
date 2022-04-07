@@ -13,5 +13,5 @@ struct SearchResponse: Decodable {
 	var totalPages: Int
 	var totalResults: Int
 	
-	var results: [Movie]
+	var results: Array<Movie> = []
 }
