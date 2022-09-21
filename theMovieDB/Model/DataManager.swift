@@ -10,7 +10,7 @@ import UIKit
 class DataManager: NSObject {
 
 	/**
-	 Method to fetch data for the movie search. It fetches data from the internet, parses the data and stores them in the designed location.
+	 Method to fetch data for the movie search. It fetches data from the internet, parses the data and stores them in the designated location.
 	 - Parameter searchTerm: String The search string the user typed.
 	 - Parameter page: Int The page of the search. Defaults to page 1 when the search is done for the first time.
 	 */
@@ -137,6 +137,32 @@ class DataManager: NSObject {
 			debugPrint("[tmdb-DataManager] send <endpoint_failure> error")
 			completion(nil)
 		}
+	}
+	
+	func fetchImage(imagePath: String?, type: ImageType? = .poster) async -> UIImage? {
+		guard let imagePathString = imagePath else {
+			debugPrint("[tmdb-DataManager] send <no_image_path> error")
+			return nil
+		}
+		
+		if let imageURL = DataAPI().createImageEndpoint(imagePath: imagePathString, type: type) {
+			let request = Network().createRequest(url: imageURL)
+			
+			do {
+				let (data, response) = try await URLSession.shared.data(for: request)
+				guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+					debugPrint("Response HTTP Code: \(String(describing: (response as? HTTPURLResponse)?.statusCode))")
+					return nil
+				}
+				
+				let image = UIImage(data: data)
+				return image
+			} catch {
+				debugPrint("Error fetching image \(error.localizedDescription)")
+			}
+		}
+		
+		return nil
 	}
 	
 	//MARK: - Data Parsing

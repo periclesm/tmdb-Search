@@ -57,7 +57,7 @@ class BackVC: UIViewController {
 			comic = ComicRelief.init(message: "Elementary (SEARCH), my dear Watson", image: "/eFORQaQuldP89f8mQMaa71mmLqu.jpg")
 			
 		case .comingSoon:
-			comic = ComicRelief.init(message: "May the SEARCH Force be with you", image: "/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg")
+			comic = ComicRelief.init(message: "May the SEARCH be with you", image: "/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg")
 			
 		case .winners:
 			comic = ComicRelief.init(message: "Search.\nJames Search", image: "/w9ph5cUfGbw41WXt7yuXsWeN2TV.jpg")

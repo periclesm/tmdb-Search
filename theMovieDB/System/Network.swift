@@ -15,7 +15,7 @@ enum NetHTTPMethod: String {
 class Network: NSObject {
 
 	///Creates a URLSession request with a predefined set of parameters.
-	private func createRequest(url: URL, method: NetHTTPMethod = .GET, caching: URLRequest.CachePolicy = .useProtocolCachePolicy) -> URLRequest {
+	func createRequest(url: URL, method: NetHTTPMethod = .GET, caching: URLRequest.CachePolicy = .useProtocolCachePolicy) -> URLRequest {
 		var request = URLRequest(url: url)
 		request.timeoutInterval = 15
 		request.httpMethod = method.rawValue

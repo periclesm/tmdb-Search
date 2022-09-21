@@ -16,7 +16,7 @@ class GenericCell: UITableViewCell {
 }
 
 ///Movie UITableViewCell subclassed from GenericCell to inherit all custom properties plus its own.
-class MovieCell: GenericCell {
+class MovieCell: UITableViewCell {
 	@IBOutlet weak var movieImage: UIImageView!
 	@IBOutlet weak var movieTitle: UILabel!
 	@IBOutlet weak var movieYear: UILabel!
