@@ -95,50 +95,6 @@ class DataManager: NSObject {
 		}
 	}
 	
-	/**
-	 Method to fetch data for an image. It fetches data from the internet, parses the data and stores them in the designed location.
-	 - Parameter searchTerm: String The search string the user typed.
-	 - Parameter page: Int The page of the search. Defaults to page 1 when the search is done for the first time.
-	 */
-	func getImage(imagePath: String?, type: ImageType? = .poster, completion: @escaping ((UIImage?) -> Void)) {
-		let api = DataAPI()
-		
-		//Check imagePath in case it's empty (can be if the movie has no poster or backdrop)
-		guard let pathString = imagePath else {
-			debugPrint("[tmdb-DataManager] send <no_image_path> error")
-			completion(nil)
-			return
-		}
-		
-		//Check image URL
-		if let imageURL = api.createImageEndpoint(imagePath: pathString, type: type) {
-			
-			//Fetch Data
-			Network().getData(endpoint: imageURL) { data, error in
-				if error == nil {
-					if data != nil {
-						
-						//Convert the received (image) data into a UIImage object and return it.
-						let image = UIImage(data: data!)
-						completion(image)
-					}
-					else {
-						debugPrint("[tmdb-DataManager] send <no_image_data> error")
-						completion(nil)
-					}
-				}
-				else {
-					debugPrint("[tmdb-DataManager] send <\(error?.localizedDescription ?? "error.localizedDescription")> error")
-					completion(nil)
-				}
-			}
-		}
-		else {
-			debugPrint("[tmdb-DataManager] send <endpoint_failure> error")
-			completion(nil)
-		}
-	}
-	
 	//MARK: - Data Parsing
 	
 	func parseData<T: Decodable>(data: Data) -> T {

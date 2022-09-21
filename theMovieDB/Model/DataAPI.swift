@@ -13,7 +13,7 @@ enum ImageType {
 
 class DataAPI: NSObject {
 	
-	var apiKey = "2810b46c0fe82e2e7eb43466581d495f"
+	var apiKey = "30235558503fb237569f476fbd0fee5f"
 	
 	/**
 	 Creates the search movie API endpoint.

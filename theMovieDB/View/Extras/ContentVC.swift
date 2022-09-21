@@ -20,9 +20,7 @@ class ContentVC: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		
 		message.text = content?.message
-		image.getImage(url: content?.image, imageType: .poster)
+		ImageManager.fetchImage(imageFile: content?.image, imageView: image)
 	}
-	
 }

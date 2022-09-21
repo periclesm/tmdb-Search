@@ -35,7 +35,8 @@ class MovieVC: UITableViewController {
 		self.movieDescription.text = vm.movie?.overview
 		self.movieRating.text = "\(vm.movie?.voteAverage ?? 0)"
 		self.movieVotes.text = "\(vm.movie?.voteCount ?? 0) votes"
-		self.backImage.getImage(url: vm.movie?.backdropPath, imageType: .backdrop)
-		self.movieImage.getImage(url: vm.movie?.posterPath, imageType: .poster)
+		
+		ImageManager.fetchImage(imageFile: vm.movie?.backdropPath, imageView: self.backImage, type: .backdrop)
+		ImageManager.fetchImage(imageFile: vm.movie?.posterPath, imageView: self.movieImage)
 	}
 }
