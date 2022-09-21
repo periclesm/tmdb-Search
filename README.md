@@ -39,5 +39,5 @@ View contains several elements that make the app's UI:
 System section contains classes performing actions related closely to the OS and/or extending/subclassing/sharing iOS SDK classes for the purposes of the app:
 
 * **Network**: A simple networking class fetching data and performing basic checks.
-* **UIImageView extension**: Adding *getImage*() and *swapImage*() functions to fetch an image from the internet and perform an animation in replacing a (placeholder) image with another.
+* **Image Manager**: A manager class for Kingfisher image extension. 
 * **MDDate**: With *DateFormatter* being an expensive allocation when used for each UITableViewCell, a shared instance initialiing a DateFormatter once with specific parameters is used across the app to cover the needs of all date conversions and formatting from the API date string into the app's desired format.
