@@ -1,18 +1,13 @@
-# The Movie Database assessment
+# The Movie Database Search
 
 ## General:
 
-A simple app that performs a search on the Movie Database according to user input and displays the results fetched from the TMDB API. On user selection, it then displays additional information for the selected movie.
-
-The app, as an assessment and limited by it's simplicity, is using the MVVM architecture along with other modules to fetch and store data from the internet and display them as a list with further information upon selection.
+An app performing a search on the Movie Database according to user input and displays results from the TMDB API. Then, on user selection, it shows additional information for the selected movie.
 
 Is written in Swift and using UIKit with Storyboards for it's views and stores data in a generic memory object.
 
 Has some simple unit testing checking the API, payload and parsing of data and the pagination (fetch consecutive data).
 
-Does not use git (in its delivarable version) to minimize the zip file size. The file also does not contain Build, Derived Data and Intermediates.
-
-No dependency managers were used. All code is written by me and much of it is based on the code repository I have created thoughout the years.
 
 ## Classes Description
 
@@ -22,18 +17,12 @@ No dependency managers were used. All code is written by me and much of it is ba
   * *SearchResponse* and *GenreResponse*: Contains the payload from the TMDB response.
   * *Movie*: a struct object containing the necessary information for a single movie.
   * *Genre*: Contains the **Genre** Struct object to be used for naming moving genres.
-* **DataStore**: A generic memory store for the data been fetched from TMDB API. Under a standard app, this would have been a SQLite/Realm database or Core Data.
+* **DataStore**: A generic memory store for the data been fetched from TMDB API. On a larger app, this would have been a SQLite/Realm database or Core Data.
 * **DataAPI**: Constructs and returns the API endpoints for each data category:
   * *Movie Search*: Searches for movies given a search term,
   * *Genre*: Fetches all TMDB genres, stores them in memory and uses where necessary,
-  * *Image*: Fetches a image type (backdrop or poster) for a given image path.
+  * *Image*: Fetches an image type (backdrop or poster) for a given image path.
 * **DataManager**: A class containing methods for fetching, parsing and storing data requested from the TMDB API. Used for search movies, genres and images. (*Note: Error handling has not been implemented in the assessment. If an error occurs, a debug message will be printed in the log*).
-
-### Domain
-
-The idea behind the Domain is that it may contain controllers for extra business and/or app logic. Given the simplicity of the assessment (and thus the lack of need for further controllers), the Domain contains only a GenreController that simply enumerates a movie's genres and convers the stored genre id into a genre-named string. 
-
-Given that GenreController is used in multiple different parts of the app, it is not placed in a single VM and thus being accessible only to one VC.
 
 ### View
 
@@ -49,6 +38,6 @@ View contains several elements that make the app's UI:
 
 System section contains classes performing actions related closely to the OS and/or extending/subclassing/sharing iOS SDK classes for the purposes of the app:
 
-* **Network**: A simple networking class fetching data and performing basic checks (A normal app networking module is far more complicated and extended that what is used here)
+* **Network**: A simple networking class fetching data and performing basic checks.
 * **UIImageView extension**: Adding *getImage*() and *swapImage*() functions to fetch an image from the internet and perform an animation in replacing a (placeholder) image with another.
-* **MDDate**: With *DateFormatter* being an expensive allocation when used for each UItableViewCell, a shared instance initialiing a DateFormatter once with specific parameters is used across the app to cover the needs of all date conversions and formatting from the API date string into the app's desired format.
+* **MDDate**: With *DateFormatter* being an expensive allocation when used for each UITableViewCell, a shared instance initialiing a DateFormatter once with specific parameters is used across the app to cover the needs of all date conversions and formatting from the API date string into the app's desired format.

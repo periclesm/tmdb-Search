@@ -13,5 +13,9 @@ struct SearchResponse: Decodable {
 	var totalPages: Int
 	var totalResults: Int
 	
-	var results: Array<Movie> = []
+	var results: MovieDataType = []
+}
+
+struct GenreResponse: Decodable {
+	var genres: GenreDataType = []
 }

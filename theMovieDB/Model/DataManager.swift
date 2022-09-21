@@ -139,32 +139,6 @@ class DataManager: NSObject {
 		}
 	}
 	
-	func fetchImage(imagePath: String?, type: ImageType? = .poster) async -> UIImage? {
-		guard let imagePathString = imagePath else {
-			debugPrint("[tmdb-DataManager] send <no_image_path> error")
-			return nil
-		}
-		
-		if let imageURL = DataAPI().createImageEndpoint(imagePath: imagePathString, type: type) {
-			let request = Network().createRequest(url: imageURL)
-			
-			do {
-				let (data, response) = try await URLSession.shared.data(for: request)
-				guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-					debugPrint("Response HTTP Code: \(String(describing: (response as? HTTPURLResponse)?.statusCode))")
-					return nil
-				}
-				
-				let image = UIImage(data: data)
-				return image
-			} catch {
-				debugPrint("Error fetching image \(error.localizedDescription)")
-			}
-		}
-		
-		return nil
-	}
-	
 	//MARK: - Data Parsing
 	
 	func parseData<T: Decodable>(data: Data) -> T {

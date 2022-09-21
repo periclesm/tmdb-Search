@@ -11,7 +11,7 @@ import UIKit
  A generic memory store for the data been fetched from TMDB API. Under normal conditions, this would have been a SQLite/Realm database or Core Data.
  */
 
-typealias MoviesDataType = Array<Movie>
+typealias MovieDataType = Array<Movie>
 typealias GenreDataType = Array<Genre>
 
 class DataStore: NSObject {
@@ -21,7 +21,7 @@ class DataStore: NSObject {
 	 An array containing the movies related to the search term.
 	 Contents are updated (append) during the pagination process and cleared at user action.
 	 */
-	var data: MoviesDataType = []
+	var data: MovieDataType = []
 	
 	/**
 	 An array containing all TMDB genres.

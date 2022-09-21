@@ -12,7 +12,7 @@ class SearchVM: NSObject {
 	let store = DataStore.shared
 	
 	///Array with all movies to be used in UITableView cells.
-	var movies: MoviesDataType = []
+	var movies: MovieDataType = []
 	
 	///The current page index.
 	var pageIndex = 1
