@@ -23,11 +23,12 @@ class ImageManager: NSObject {
 		let imageURL = DataAPI().createImageEndpoint(imagePath: imageFile, type: type)
 		
 		if let imageURL {
-			let resource = ImageResource(downloadURL: imageURL, cacheKey: imageURL.lastPathComponent)
-			let options: KingfisherOptionsInfo = [.onFailureImage(placeholder)]
+			//temporarily removing 
+//			let resource = ImageResource(downloadURL: imageURL, cacheKey: imageURL.lastPathComponent)
+			let options: KingfisherOptionsInfo = [.onFailureImage(placeholder), .scaleFactor(UIScreen.main.scale)]
 			
 			imageView.kf.indicatorType = .activity
-			imageView.kf.setImage(with: resource, options: options, completionHandler:  { result in
+			imageView.kf.setImage(with: imageURL, options: options, completionHandler:  { result in
 				switch result {
 				case .failure(let error):
 					debugPrint("[Kingfish] Image Fetch Failed: \(error.localizedDescription)")
