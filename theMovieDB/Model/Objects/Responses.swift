@@ -8,11 +8,9 @@
 import Foundation
 
 struct SearchResponse: Decodable {
-	
 	var page: Int
 	var totalPages: Int
 	var totalResults: Int
-	
 	var results: MovieDataType = []
 }
 

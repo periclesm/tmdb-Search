@@ -12,11 +12,7 @@ class MovieVM: NSObject {
 	///Object to contain the user selected movie.
 	var movie: Movie? = nil
 	
-	/**
-	 Formats the subtitle string to contain the movie release date and genres.
-	 Since this string is used only in MovieVC, it is placed in MovieVM (also: placed here because it performs data operations).
-	 If this string format were needed in other VCs, its appropriate place would have been in the Domain section.
-	 */
+
 	func subtitleString() -> String {
 		var subtitle = ""
 		subtitle.append(contentsOf: MDDate.shared.convertDateFormat(inputString: self.movie?.releaseDate, fromFormat: .original, toFormat: .formatted))
@@ -25,5 +21,21 @@ class MovieVM: NSObject {
 		genres.isEmpty ? nil : subtitle.append(contentsOf: " • \(genres)")
 		
 		return subtitle
+	}
+	
+	func releaseDateString() -> String {
+		let formattedDate = MDDate.shared.convertDateFormat(inputString: self.movie?.releaseDate, fromFormat: .original, toFormat: .formatted)
+		return "Release Date: \(formattedDate)"
+	}
+	
+	func genresString() -> String {
+		return GenreController.getMovieGenres(self.movie)
+	}
+	
+	func ratingsString() -> String {
+		var rating = ""
+		rating.append(contentsOf: "⭐️ \(movie?.voteAverage ?? 0)")
+		rating.append(contentsOf: " • \(movie?.voteCount ?? 0) votes")
+		return rating
 	}
 }

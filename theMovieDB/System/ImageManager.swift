@@ -23,8 +23,6 @@ class ImageManager: NSObject {
 		let imageURL = DataAPI().createImageEndpoint(imagePath: imageFile, type: type)
 		
 		if let imageURL {
-			//temporarily removing 
-//			let resource = ImageResource(downloadURL: imageURL, cacheKey: imageURL.lastPathComponent)
 			let options: KingfisherOptionsInfo = [.onFailureImage(placeholder), .scaleFactor(UIScreen.main.scale)]
 			
 			imageView.kf.indicatorType = .activity

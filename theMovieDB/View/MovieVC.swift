@@ -18,10 +18,10 @@ class MovieVC: UITableViewController {
 	@IBOutlet weak var backImage: UIImageView!
 	@IBOutlet weak var movieImage: UIImageView!
 	@IBOutlet weak var movieTitle: UILabel!
-	@IBOutlet weak var movieSubtitle: UILabel!
+	@IBOutlet weak var movieGenres: UILabel!
+	@IBOutlet weak var movieReleaseDate: UILabel!
 	@IBOutlet weak var movieDescription: UILabel!
-	@IBOutlet weak var movieRating: UILabel!
-	@IBOutlet weak var movieVotes: UILabel!
+	@IBOutlet weak var movieRatings: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +31,10 @@ class MovieVC: UITableViewController {
 	//Assign the selected movie values into UI components.
 	func setupUI() {
 		self.movieTitle.text = vm.movie?.title
-		self.movieSubtitle.text = vm.subtitleString()
+		self.movieGenres.text = vm.genresString()
+		self.movieReleaseDate.text = vm.releaseDateString()
 		self.movieDescription.text = vm.movie?.overview
-		self.movieRating.text = "\(vm.movie?.voteAverage ?? 0)"
-		self.movieVotes.text = "\(vm.movie?.voteCount ?? 0) votes"
+		self.movieRatings.text = vm.ratingsString()
 		
 		ImageManager.fetchImage(imageFile: vm.movie?.backdropPath, imageView: self.backImage, type: .backdrop)
 		ImageManager.fetchImage(imageFile: vm.movie?.posterPath, imageView: self.movieImage)
