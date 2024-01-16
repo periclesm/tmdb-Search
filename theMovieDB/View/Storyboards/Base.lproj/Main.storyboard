@@ -222,7 +222,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Genres" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD8-sI-hey">
                                                             <rect key="frame" x="0.0" y="0.0" width="260" height="20.333333333333332"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -242,6 +242,7 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="hwo-1a-dcA" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="naC-8C-rzj" secondAttribute="bottom" id="D4R-M9-uMB"/>
                                                 <constraint firstItem="naC-8C-rzj" firstAttribute="top" secondItem="Qvk-LL-iqO" secondAttribute="topMargin" id="JH6-Uf-kXk"/>
                                                 <constraint firstItem="naC-8C-rzj" firstAttribute="leading" secondItem="Qvk-LL-iqO" secondAttribute="leadingMargin" id="L7O-F9-S7F"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="naC-8C-rzj" secondAttribute="bottom" id="MTD-B5-FCh"/>

@@ -81,9 +81,9 @@ class SearchVC: UITableViewController {
 	//MARK: - Search methods
 	
 	///Clear search data method.
-	func clearSearch() {
+	func clearSearch(reload: Bool = true) {
 		vm.clearData()
-		self.tableView.reloadData()
+		reload ? self.tableView.reloadData() : nil
 	}
 	
 	///Asks the View Model to fetch data. Upon completion, it performs a check if data empty and reloads table.
@@ -104,6 +104,11 @@ extension SearchVC: UISearchBarDelegate {
 		if searchText.isEmpty {
 			//clear all data when user deletes all characters with backspace.
 			self.clearSearch()
+		}
+		else if searchText.count > 4 {
+			debugPrint("fire search! (\(searchText.count) characters)")
+			self.clearSearch(reload: false)
+			self.search(searchText)
 		}
 	}
 	
