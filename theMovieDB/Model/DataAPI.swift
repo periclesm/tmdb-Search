@@ -13,7 +13,12 @@ enum ImageType {
 
 class DataAPI: NSObject {
 	
-	var apiKey = "30235558503fb237569f476fbd0fee5f"
+	/*
+	 Create an account in MovieDb (https://www.themoviedb.org/) and get your API key from account settings.
+	 Add your API key below to use the app.
+	 */
+	
+	var apiKey = <#T##Insert your API KEY here#>
 	
 	/**
 	 Creates the search movie API endpoint.
