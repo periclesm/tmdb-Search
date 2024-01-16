@@ -14,7 +14,6 @@ struct ComicRelief {
 
 protocol BackgroundDelegate {
 	func displayMessage(_ display:Bool)
-	func displayContent(_ display:Bool)
 }
 
 class BackVC: UIViewController {
@@ -70,9 +69,5 @@ class BackVC: UIViewController {
 extension BackVC: BackgroundDelegate {
 	func displayMessage(_ display: Bool) {
 		self.message.isHidden = !display
-	}
-	
-	func displayContent(_ display: Bool) {
-		self.content.isHidden = !display
 	}
 }

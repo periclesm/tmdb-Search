@@ -46,8 +46,8 @@ class SearchVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		//Show/hide backgound depending on the UITableView array count.
-		backDelegate?.displayContent(vm.movies.isEmpty)
+		// Show/hide backgound depending on the UITableView array count.
+		vm.movies.isEmpty ? (self.tableView.backgroundView?.isHidden = false) : (self.tableView.backgroundView?.isHidden = true)
 		return vm.movies.count
     }
 
