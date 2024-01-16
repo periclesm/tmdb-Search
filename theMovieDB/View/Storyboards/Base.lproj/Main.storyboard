@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -166,6 +167,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="OA0-X6-lgc" secondAttribute="bottom" constant="8" id="4j0-eN-hqN"/>
                                                 <constraint firstItem="OA0-X6-lgc" firstAttribute="leading" secondItem="9U9-dl-TUK" secondAttribute="leading" constant="10" id="AsS-GH-oZe"/>
@@ -189,6 +191,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="k3o-S8-4Y8" firstAttribute="leading" secondItem="Jhl-a4-HPh" secondAttribute="leadingMargin" id="9pU-qn-TIg"/>
                                                 <constraint firstItem="k3o-S8-4Y8" firstAttribute="bottom" secondItem="Jhl-a4-HPh" secondAttribute="bottomMargin" id="CPh-Tz-zDA"/>
@@ -241,6 +244,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="hwo-1a-dcA" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="naC-8C-rzj" secondAttribute="bottom" id="D4R-M9-uMB"/>
                                                 <constraint firstItem="naC-8C-rzj" firstAttribute="top" secondItem="Qvk-LL-iqO" secondAttribute="topMargin" id="JH6-Uf-kXk"/>
@@ -271,6 +275,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="fBP-Dm-rUN" firstAttribute="leading" secondItem="zQ6-md-7rO" secondAttribute="leadingMargin" id="dYA-IE-23t"/>
                                                 <constraint firstItem="fBP-Dm-rUN" firstAttribute="top" secondItem="zQ6-md-7rO" secondAttribute="topMargin" id="nAh-lJ-t9q"/>
@@ -304,6 +309,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backImage" destination="OA0-X6-lgc" id="KQi-hV-ZdN"/>
+                        <outlet property="background" destination="RDa-Qa-jr0" id="7Xa-5j-Xg3"/>
+                        <outlet property="backgroundImage" destination="TXu-gP-7Ir" id="ene-N8-Xbc"/>
                         <outlet property="movieDescription" destination="fBP-Dm-rUN" id="52t-Dn-O9d"/>
                         <outlet property="movieGenres" destination="cD8-sI-hey" id="jSn-ZY-1yc"/>
                         <outlet property="movieImage" destination="naC-8C-rzj" id="alO-m1-s88"/>
@@ -313,6 +320,35 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OO4-KW-nja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="RDa-Qa-jr0" userLabel="Background View">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TXu-gP-7Ir" userLabel="Background Image">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        </imageView>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xga-3h-Djt">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b09-3T-aF0">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                            <blurEffect style="systemMaterial"/>
+                        </visualEffectView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="HMl-LB-Gmq"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Xga-3h-Djt" firstAttribute="leading" secondItem="HMl-LB-Gmq" secondAttribute="leading" id="HfR-ae-u3V"/>
+                        <constraint firstItem="TXu-gP-7Ir" firstAttribute="leading" secondItem="HMl-LB-Gmq" secondAttribute="leading" id="ZKw-gP-jmj"/>
+                        <constraint firstItem="TXu-gP-7Ir" firstAttribute="top" secondItem="RDa-Qa-jr0" secondAttribute="top" id="b6w-Jg-BHk"/>
+                        <constraint firstAttribute="bottom" secondItem="TXu-gP-7Ir" secondAttribute="bottom" id="bJo-gu-LrC"/>
+                        <constraint firstItem="Xga-3h-Djt" firstAttribute="trailing" secondItem="HMl-LB-Gmq" secondAttribute="trailing" id="g3m-hn-ZAo"/>
+                        <constraint firstItem="TXu-gP-7Ir" firstAttribute="trailing" secondItem="HMl-LB-Gmq" secondAttribute="trailing" id="sl3-Ga-QBR"/>
+                        <constraint firstItem="Xga-3h-Djt" firstAttribute="top" secondItem="RDa-Qa-jr0" secondAttribute="top" id="wR3-FM-mlD"/>
+                        <constraint firstAttribute="bottom" secondItem="Xga-3h-Djt" secondAttribute="bottom" id="wTD-Dc-MnV"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="1668" y="117"/>
         </scene>
